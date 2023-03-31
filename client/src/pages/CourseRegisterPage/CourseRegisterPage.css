@@ -1,22 +1,3 @@
-.register-page-container {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-.register-page-section {
-  width: 828px;
-  max-width: 100%;
-}
-
-.register-page-section-card {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: var(--spacing-5);
-}
-
 .register-page-section-title {
   color: var(--primary);
   font-size: 20px;

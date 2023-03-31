@@ -4,7 +4,11 @@ import { useNavigate } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Trash } from 'phosphor-react'
 import * as yup from 'yup'
-
+import {
+  RegisterPageContainer,
+  RegisterPageSection,
+  RegisterPageSectionCard
+} from './styles'
 import Card from '../../components/Card'
 import InputGroup from '../../components/InputGroup'
 import Button, { BUTTON_VARIANT } from '../../components/Button'
@@ -75,10 +79,10 @@ function CourseRegisterPage() {
   }
 
   return (
-    <div className="register-page-container">
-      <section className="register-page-section">
+    <RegisterPageContainer>
+      <RegisterPageSection>
         <Card>
-          <div className="register-page-section-card">
+          <RegisterPageSectionCard>
             <h1 className="register-page-section-title">Cadastrar Curso</h1>
 
             <form
@@ -186,10 +190,10 @@ function CourseRegisterPage() {
                 </div>
               </div>
             </form>
-          </div>
+          </RegisterPageSectionCard>
         </Card>
-      </section>
-    </div>
+      </RegisterPageSection>
+    </RegisterPageContainer>
   )
 }
 
