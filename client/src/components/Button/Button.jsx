@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types'
-
 import { BUTTON_VARIANT } from './ButtonVariant'
-
-import './Button.css'
+import { ButtonStyled } from './styles'
 
 function Button({
   children,
@@ -11,12 +9,12 @@ function Button({
   ...props
 }) {
   return (
-    <button
-      className={`button ${variant} ${isIconButton ? 'icon-button' : ''}`}
+    <ButtonStyled
+      className={`${variant} ${isIconButton ? 'icon-button' : ''}`}
       {...props}
     >
       {children}
-    </button>
+    </ButtonStyled>
   )
 }
 

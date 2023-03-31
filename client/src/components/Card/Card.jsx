@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
-
-import './Card.css'
+import { CardStyled } from './styles'
 
 function Card({ children }) {
-  return <div className="card">{children}</div>
+  return <CardStyled>{children}</CardStyled>
 }
 
 Card.propTypes = {
