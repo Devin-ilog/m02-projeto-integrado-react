@@ -1,9 +1,17 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import InputGroup from '../../components/InputGroup'
 import Button from '../../components/Button'
 import { useSetUserInfo } from '../../hooks/useUserInfo'
 import { apiService } from '../../services/api'
+import {
+  LoginPageContainer,
+  LoginCenterBox,
+  LoginHeading,
+  LoginForm,
+  ErrorMessage,
+  SigninButton
+} from './styles'
 import './LoginPage.css'
 
 function LoginPage() {
@@ -55,11 +63,11 @@ function LoginPage() {
   }
 
   return (
-    <div className="loginPageContainer">
-      <div className="loginCenterBox">
-        <h2 className="title">Acessar</h2>
+    <LoginPageContainer>
+      <LoginCenterBox>
+        <LoginHeading>Acessar</LoginHeading>
 
-        <div className="loginForm">
+        <LoginForm>
           <InputGroup
             type="text"
             placeholder="Seu e-mail"
@@ -76,19 +84,17 @@ function LoginPage() {
             onChange={handleChangePassword}
             helperText={showPasswordHelper ? 'Campo obrigatório' : ''}
           />
-        </div>
+        </LoginForm>
 
-        {error && <p className="errorMessage">{error}</p>}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
 
         <Button onClick={handleLoginAction} disabled={loading}>
           {loading ? 'Carregando...' : 'Entrar'}
         </Button>
 
-        <Link to="/signin" className="signinButton">
-          Cadastrar
-        </Link>
-      </div>
-    </div>
+        <SigninButton to="/signin">Cadastrar</SigninButton>
+      </LoginCenterBox>
+    </LoginPageContainer>
   )
 }
 
