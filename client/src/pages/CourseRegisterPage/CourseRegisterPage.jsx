@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Trash } from 'phosphor-react'
 import * as yup from 'yup'
+import { useUserInfo } from '../../hooks/useUserInfo'
 import {
   RegisterPageContainer,
   RegisterPageSection,
@@ -26,8 +27,16 @@ const schema = yup.object().shape({
 })
 
 function CourseRegisterPage() {
-  const [content, setContent] = useState({ value: '', error: '' })
   const navigate = useNavigate()
+  const userInfo = useUserInfo()
+
+  useEffect(() => {
+    if (!userInfo) {
+      navigate('/login')
+    }
+  }, [userInfo])
+
+  const [content, setContent] = useState({ value: '', error: '' })
 
   const {
     register,
