@@ -13,6 +13,7 @@ import LoginPage from './pages/LoginPage'
 import CourseDetailsPage from './pages/CourseDetailsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import CourseRegisterPage from './pages/CourseRegisterPage'
+import UserRegisterPage from './pages/UserRegisterPage'
 
 function App() {
   const [globalState, setGlobalState] = useState()
@@ -27,6 +28,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/user/register" element={<UserRegisterPage />} />
               <Route path="/course/register" element={<CourseRegisterPage />} />
               <Route path="/course/:id" element={<CourseDetailsPage />} />
               <Route path="*" element={<NotFoundPage />} />

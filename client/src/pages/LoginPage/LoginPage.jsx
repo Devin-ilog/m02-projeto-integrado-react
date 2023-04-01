@@ -12,7 +12,6 @@ import {
   ErrorMessage,
   SigninButton
 } from './styles'
-import './LoginPage.css'
 
 function LoginPage() {
   const navigate = useNavigate()
@@ -92,7 +91,7 @@ function LoginPage() {
           {loading ? 'Carregando...' : 'Entrar'}
         </Button>
 
-        <SigninButton to="/signin">Cadastrar</SigninButton>
+        <SigninButton to="/user/register">Cadastrar</SigninButton>
       </LoginCenterBox>
     </LoginPageContainer>
   )
